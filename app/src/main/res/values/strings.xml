@@ -1,0 +1,382 @@
+<resources>
+    <string name="all_name">all</string>
+    <string name="app_name">CyberAware</string>
+    <string name="blank_name">"You left your username blank"</string>
+    <string name="clear_choices">RESET</string>
+    <string name="delete">Delete Item?</string>
+    <string name="delete_warning">Would you like to delete the selected article from Favorites?</string>
+    <string name="done">Done</string>
+    <string name="edit_feed">Edit Feed</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="Erase_History">Erase History</string>
+    <string name="favorite">Favorites</string>
+    <string name="latitude">Latitude</string>
+    <string name="location">Location:</string>
+    <string name="location_message">Welcome to Cramer!</string>
+    <string name="location_prompt">"use location services?"</string>
+    <string name="malicious_app_instruct">*Please uninstall the following apps for your protection:</string>
+    <string name="malicious_app_tag">Malicious Apps Detected:</string>
+    <string name="malicious_app_warning">Malicious Apps Detected</string>
+    <string name="my_feed">My Feed</string>
+    <string name="news">News</string>
+    <string name="no">no</string>
+    <string name="notification_caps">NOTIFICATIONS</string>
+    <string name="notification_name">Notifications</string>
+    <string name="old_settings">Use Old Settings</string>
+    <string name="personal_caps">PERSONAL</string>
+    <string name="personal_filter">Personal Filter</string>
+    <string name="privacy_caps">PRIVACY</string>
+    <string name="recommendation_title">Recommended Article</string>
+    <string name="role_instructions">Please select your skill level.</string>
+    <string name="safety">Cyber Safety</string>
+    <string name="save">SAVE</string>
+    <string name="saved">saved</string>
+    <string name="search_name">Search</string>
+    <string name="settings_name">Settings</string>
+    <string name="sign_up_name">Sign Up</string>
+    <string name="skill_clarification">*skill level refers to how knowledgeable you are about cybersecurity*</string>
+    <string name="social_media">Social Media Access</string>
+    <string name="sort_name">sort</string>
+    <string name="tip_name">Tips</string>
+    <string name="topic_pick">Pick cybersecurity topics you are interested in:</string>
+    <string name="url_toast">"URL not found"</string>
+    <string name="usage">Usage:</string>
+    <string name="usage_prompt">"Usage permissions must be enabled in settings for full functionality"</string>
+    <string name ="usage_tag">App Usage Statistics:</string>
+    <string name="username">Username</string>
+    <string name="username_hint">Please enter username</string>
+    <string name="whitelist">Wifi Whitelist:</string>
+    <string name="wifi">Wifi:</string>
+    <string name="wifi_warning">Insecure Wifi</string>
+    <string name="yes">yes</string>
+
+    <string name="malicious_app_explanation">
+        \nBEWARE: We found a known malicious app on your device. Please look at the list of apps
+        below and delete the corresponding app(s) from your device:
+    </string>
+
+    <string name="malicious_app_extended">
+        \nNote: These apps are not in the Play Store anymore
+    </string>
+
+    <string name="usageInfo">
+        *Note: To fully enable Usage, please also make sure to grant Usage Access permission in
+        your Phone Settings*
+    </string>
+
+    <string name="wifi_explanation">
+        \nWARNING: You are on an unencrypted and therefore insecure Wi-Fi network. Avoid logging
+        into online accounts since your usernames and passwords can be easily stolen.
+    </string>
+
+    <string name="Beginner">Beginner</string>
+    <string name="Intermediate">Intermediate</string>
+    <string name="Advanced">Advanced</string>
+    <string name="Expert">Expert</string>
+
+    <string-array name = "user_filter_types">
+        <item>Beginner</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+        <item>Expert</item>
+    </string-array>
+
+    <string-array name="article_types">
+        <item>Attacks</item>
+        <item>Breaches</item>
+        <item>Cryptography</item>
+        <item>CryptoCurrency</item>
+        <item>Data Breaches</item>
+        <item>Decryption</item>
+        <item>Encryption</item>
+        <item>Internal Threats</item>
+        <item>Internet of Things</item>
+        <item>Malware</item>
+        <item>Mobile Security</item>
+        <item>Online Safety</item>
+        <item>Phishing</item>
+        <item>Physical Security</item>
+        <item>Privacy</item>
+        <item>Threats</item>
+        <item>Vulnerabilities</item>
+    </string-array>
+
+    <string-array name="tip_names">
+        <item>Password Creation</item>
+        <item>Password Management</item>
+        <item>2-Factor Authentication</item>
+        <item>Security Questions</item>
+        <item>Http vs Https</item>
+        <item>Phishing</item>
+        <item>Check Your Wifi Connection</item>
+    </string-array>
+
+    <!--
+        Keep in mind that when typing strings, inserting apostrophe's and quotation marks will
+        require a preceding backslash. For example, [ you're ] needs to be [ you\'re ]. Or,
+        [ he said "hello" ] needs to be [ he said \"hello\" ]
+    -->
+
+    <string-array name="tip_content">
+        <item>
+            Passwords should be more than the minimum amount allowed by any service and should
+            include non-alphabetic characters.\n
+
+            \nLet us look at different password combinations to get a better idea of why. Say a
+            password only uses lowercase alphabetic characters and is n characters long. This means
+            there are 26^n possible combinations that it could be. For example, if a password\'s
+            length is eight characters, then there are 26^8 possible combinations it could be,
+            which, for visualization, is equal to 208,827,064,576 different combinations. This may
+            seem like a large number, but the average laptop can make 1,000,000,000 guesses per
+            second, meaning it would take about 3.5 minutes to crack.\n
+
+            \nA complex password using upper and lowercase alphabets, numbers, and special
+            characters (such as %,$,#,@,!,~,^,*) is much harder to break. Since there are 95
+            different characters we can use (52 characters from using the lower and uppercase
+            characters of the alphabet, 10 numbers, and 33 special characters), there are 95^n
+            possible permutations of the password. Now, an eight-character, complex password would
+            take about 77 days to crack. Furthermore, a ten-character, complex password would take
+            about 1,900 years to crack!\n
+
+            \nNeedless to say, passwords only get stronger the longer and more complex they are.
+            Therefore, it is important to make your passwords long and strong!\n
+
+            \nThe above scenarios we used were ones where a laptop was merely guessing all the
+            possible combinations that a password could be. This is called a \'brute force\' attack.
+            However, there are many other ways that your passwords can be cracked. For example, say
+            you have a long password that has uppercase, lowercase, numeric, and special characters.
+            For our example, say your password is Password123!. Despite meeting all the requirements
+            of being long and complex, this password will actually be easily cracked. Why? Because
+            this password is a common password.\n
+
+            \nCommon passwords can be cracked using a Dictionary attack. A Dictionary attack is a
+            form of a brute force attack. The difference is that Dictionary attacks narrow the
+            guessing threshold to a pre-made wordlist of common and/or compromised passwords.\n
+
+            \nA danger of wordlists is that there are many circulating around. For example, there is
+            a famous wordlist called \'Rockyou\' that was obtained in 2009 when a company
+            experienced a database breach that resulted in millions of user data being compromised.
+            User passwords were not encrypted in the company\'s database, meaning that the plaintext
+            passwords were easily stolen. As a result, the infamous \'Rockyou\' wordlist containing
+            around 14.3 million unique passwords was created. The moral of the story is that even if
+            passwords are long and use complex characters, if the password is common or easy to
+            guess, then it can still be easily cracked.\n
+
+            \nTherefore, please keep in mind three things when creating a password:\n
+                \t**Length: make it more than the minimum required length\n
+                \t**Complexity: use a combination of cased alphanumeric, special characters\n
+                \t**Commonality: do not use common phrases/words in your passwords\n
+        </item>
+
+        <item>
+            As we covered in our tips about Password Creation, it is important that passwords be
+            long, complex, and not contain common words/phrases. For this section, we will cover the
+            importance of password uniqueness and the helpfulness of password managers.\n
+
+            \nTo begin, for each service (e.g., social media, online store, etc.) you use, the
+            password you create for each service should be unique. Many password creations result in
+            a user reusing a password he or she previously created. Similarly, many password changes
+            oftentimes result in a password being changed to a slight variation of the original
+            password. This can be predictable and make passwords easier to crack if the hacker is
+            able to obtain the old password from a compromised database. Imagine if one of your
+            passwords is lost in a data breach. If you use similar passwords, then it will be easier
+            to guess what your other passwords might be. Worse yet, if you use the same password,
+            then all your other accounts are compromised! Yikes!\n
+
+            \nAt this point, you may be thinking that remembering each password you create would be
+            impossible, but this is where password managers come in. Password managers are trusty,
+            reliable tools that can store all your usernames and passwords and help keep them safe.
+            Furthermore, for online services, password managers can help you automatically log in to
+            your account. Therefore, you only need to remember one password—the password for your
+            password manager.\n
+            *Just remember to make sure the password you create for your password manager is long
+            and complex so that it is extremely difficult if not near impossible to break into your
+            password manager.*\n
+
+            \nAs a last note, when selecting a password manager, make sure the password manager you
+            are using is legitimate by checking the reputation of the company that produced the
+            password manager. Other things to check are the reviews and downloads to see if other
+            people are using and enjoying the service. Best of luck!\n
+        </item>
+
+        <item>
+            Two-factor authentication offers an extra layer of protection for your accounts. When
+            logging into an account, after you enter your username and corresponding password, you
+            typically obtain access to your account. However, with two-factor authentication, even
+            after entering the correct username and password, you must offer a second method of
+            authentication.\n
+
+            \nThe second method of authentication can be divided into three categories:\n
+	            \t*Something you know\n
+	            \t*Something you have\n
+	            \t*Something you are\n
+
+            \nSomething you know, as the name suggests, asks for information from you. These can
+            take the form of entering a pin or answering a security question.\n
+
+            \nSomething you have requires having a physical token with you, such as a credit card or
+            a cellphone.\n
+
+            \nSomething you are asks for biometric verification, such as a fingerprint, face scan,
+            or iris scan.\n
+
+            \nYou\'ve likely had experience using two-factor authentication before. For example, if
+            you\'ve gone to an ATM to withdraw some cash, then you\'ve likely used two-factor
+            authentication. More specifically, the authentication you\'ve used likely fell into the
+            \'something you know\' and \'something you have\' categories: your pin for something you
+            know and your card for something you have.\n
+
+            \nTwo common methods of two-factor authentication are text-message and app-based
+            authentication, both falling under the category of \'something you have.\'\n
+
+            \nText-message authentication requires using your cellphone. In this case, a code will
+            be texted to you.\n
+
+            \nApp-based authentication also requires your cellphone. You will need to download a
+            free app that generates a new code every thirty seconds. When trying to log in, you will
+            need to type in the current code displayed on the app.\n
+
+            \nText-message and app-based authentication both use time-sensitive codes. In other
+            words, the codes sent or displayed are meant to be used only once and expire after a
+            given time limit. As a result, even if a hacker obtained your login credentials, unless
+            they had access to your second authentication method, it would be exceedingly difficult
+            for him or her to hack into your account.\n
+
+            \nIf a website, app, or other account type offers two-factor authentication, it is
+            recommended that you set it up. This way, you have a better chance of protecting
+            yourself against hackers. Remember, if you see an attempt to hack into your account that
+            failed because of two-factor authentication, you\'ll be thankful!\n
+        </item>
+
+        <item>
+            It is important when creating/selecting security questions that they are easy for you to
+            remember, but not easy enough for a potential hacker to guess. Security questions used
+            to be more secure, but with the creation of social media, it is much easier to obtain
+            the answers to common security questions (such as your pet\'s name, favorite color,
+            street you grew up on, childhood friend\'s name, etc.).\n
+
+            \nTherefore, when creating/selecting security questions, try to make sure it is not
+            something a person can determine by looking through your social media accounts or by
+            simply knowing you well.\n
+        </item>
+
+        <item>
+            When entering login information or any personal data online, it is important to check
+            your browser to make sure the web connection is secure. Most browsers now have the
+            built-in lock icon on the address bar to notify you when the browser has been certified
+            as a secure connection. If you see that the lock icon is unlocked or broken, it means
+            that your connection is insecure.\n
+
+            \nBesides looking for the lock icon, another way to check whether your connection is
+            secure is to check the web address. If the web address has \"http\" instead of
+            \"https,\" then it is an insecure connection.\n
+
+            \nHTTP stands for Hypertext Transfer Protocol and is the protocol used when
+            communicating/transferring data via the internet. The difference between HTTP and HTTPS
+            is that the \"S\" in HTTPS stands for \"Secure.\" In other words, HTTPS is a secure
+            version of HTTP, where HTTPS encrypts the information exchanged between a user and web
+            server—something HTTP neglects to do. If you find yourself on an http website, that
+            means you are vulnerable to what is known as a Man in the Middle attack.\n
+
+            \nA Man in the Middle attack is an attack where a perpetrator intercepts and/or
+            manipulates communication between a user and a web application. For example, if you log
+            in to an insecure online service, a hacker could intercept the unencrypted login
+            information that you send to the web server and thereby steal your login credentials.
+            Another example is that the hacker could alter messages/content that the web server
+            sends you and trick you into thinking you are interacting with the website. However, in
+            reality, you would be interacting with the hacker!\n
+
+            \nSo, when you are browsing the internet, make sure your connection is secure. Check
+            that the lock icon is displayed on your browser and that you are on an https website.
+            Hackers always get the upper hand if users are in a hurry and/or not paying attention.
+            Therefore, to counter that, remember to always be alert for a safer online experience!\n
+        </item>
+
+        <item>
+            Phishing attacks occur when a scammer tries to get a user to hand over personal
+            information by disguising him/herself as a trusted entity. Forms of phishing include
+            fraudulent calls, emails, ads, and texts.\n
+
+            \nCalls and texts from unknown numbers can be suspicious. If you receive a call or text
+            from an unknown number claiming to be a person, company, or government agency
+            (such as the IRS) and they ask for sensitive, personal information, then it is highly
+            likely that the call or text is a phishing scam.\n
+
+            \nFraudulent emails, unlike fraudulent calls and texts, are usually much harder to spot.
+            With our growing technology, phishing emails are getting more and more sophisticated.
+            However, there are some clues and tips to keep in mind which you can use to help protect
+            yourself.\n
+
+            \nFirst, similar to a call or text scam, look at the email\'s sender and determine
+            whether you know them or the company they claim to be affiliated with. If you do not,
+            then it\'s likely a scam.\n
+
+            \nSecond, if you do know the person or company, check to see if the address matches your
+            organization and/or matches past emails from who they claim to be. If it does not match,
+            it is likely a scam and you should alert the person or organization.\n
+
+            \nIf the email address seems legitimate, there are other clues you can look out for. For
+            example, look at the quality of the email. If there are multiple spelling errors, then
+            it is a sign of unprofessionalism and lets you know that it is a poorly crafted email—a
+            sign of a cheap fraud.\n
+
+            \nYou can also look for unusually generic formatting. For example, let\'s say you
+            receive an email from a company (such as Amazon, Microsoft, Netflix, etc.) asking you to
+            update your payment information. However, upon closer inspection, you notice that it
+            does not specify your username, name, or anything personal to your account. If that is
+            the case, then it is likely a scam. If the company needed you to do something with your
+            account, it will have your information on-hand and will send a somewhat personalized
+            message (such as saying \"Dear YourName\" instead of \"Dear customer\"). One last clue
+            to look out for is checking to see if the email is asking you to do an unusual task.
+            If it is, then it might be a scam.\n
+
+            \nIf you are unsure and/or feel suspicious about an email, contact the person or company
+            directly. When you contact the person or company, do not simply hit \"reply\" to the
+            email as it will alert the potential scammer. Instead, open a new email and in the
+            sender\'s email address, enter an email address you know to be correct.\n
+
+            \n*In any case, if the email looks or feels suspicious, do not click on any links or
+            attachments that are provided in the email as they may contain malware. Even if you
+            trust the email\'s sender, always be alert if you click on a link that redirects you to
+            a webpage. Always check that the web address is correct and that your connection to the
+            web page is secure (read \"http vs https\" in our tips)*\n
+
+            \nLastly, be cautious of online ads. Clicking on an ad usually results in being
+            redirected to a webpage so that a user can purchase the item or service being
+            advertised. This can be dangerous as there are many fraudulent internet sites. However,
+            if you do decide to click an ad, check to make sure the website you are being redirected
+            to is a legitimate site (such as checking to see if you are on a legitimate Amazon
+            website) and that your connection is secure (read \"http vs https\" in our tips). Always
+            remember to not enter any personal information to an insecure and/or untrusted site and
+            to try to keep ad-clicking to a minimum.\n
+        </item>
+
+        <item>
+            \nBe cautious when connecting to a new Wi-Fi network; make sure the network is secure.
+            Secure networks, such as personal home networks and trusted school networks, are
+            normally encrypted. However, open or public networks are normally unencrypted.
+            Consequently, connecting to an open network leaves you vulnerable to your network
+            traffic (the data transmitted between your device and server) being monitored.
+            Therefore, whenever you are on a public network (e.g., airport, café, restaurant, hotel,
+            etc.), avoid logging into/entering personal information online as it can be seen through
+            unencrypted web traffic.\n
+
+            \nEncrypted Wi-Fi networks typically offer more security. Today, there are two types of
+            Wi-Fi encryptions: WEP (Wired Equivalent Privacy) and WPA (Wi-Fi Protected Access). To
+            check if the network you are on uses a form of WEP or WPA encryption, you can go to the
+            Wi-Fi section of this app.\n
+            *To access the Wi-Fi section, go to the News page and tap the Wi-Fi icon; it will let
+            you know whether your network is encrypted.*\n
+
+            \nTo manually check whether your network is encrypted on Windows and Android, go to the
+            list of available Wi-Fi\'s on your device. Click the network you are on and select
+            \"Properties\" or \"Settings.\"\n
+
+            \nWhen looking for Wi-Fi networks, also make sure the network you are connecting to is
+            the correct network you want to connect to and not a fake network with a similar name.
+            There have been instances where networks have been set up with similar names to other
+            networks to trick users into giving login credentials.\n
+        </item>
+    </string-array>
+
+</resources>

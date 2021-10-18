@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/newsButton"
+        android:title="@string/news"
+        android:icon="@drawable/bookicon"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/myFeedButton"
+        android:title="@string/my_feed"
+        android:icon="@drawable/contentwriting"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/tipButton"
+        android:title="@string/tip_name"
+        android:icon="@drawable/beanicon"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/bookmarkButton"
+        android:title="@string/favorite"
+        android:icon="@drawable/fileicon"
+        app:showAsAction="ifRoom" />
+
+</menu>

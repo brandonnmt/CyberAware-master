@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f1faee">
+
+    <TextView
+        android:id="@+id/personalText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
+        android:text="@string/personal_caps"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <Switch
+        android:id="@+id/socialMediaCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/social_media"
+        android:layout_below="@+id/personalText"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/changeUsernameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/socialMediaCheck"
+        android:text="@string/username"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/changeUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:padding="10dp"
+        android:layout_below="@+id/changeUsernameText" />
+
+    <Spinner
+        android:id="@+id/levelSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:padding="10dp"
+        android:layout_below="@+id/changeUsername" />
+
+    <TextView
+        android:id="@+id/notificationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/levelSpinner"
+        android:layout_marginTop="-34dp"
+        android:paddingStart="10dp"
+        android:paddingTop="30dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/notification_caps"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <Switch
+        android:id="@+id/notificationCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notificationText"
+        android:text="@string/notification_name"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/privacyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notificationCheck"
+        android:text="@string/privacy_caps"
+        android:paddingTop="30dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <Switch
+        android:id="@+id/locationCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/location"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/privacyText"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:textSize="18sp" />
+
+    <Switch
+        android:id="@+id/usageCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/usage"
+        android:layout_below="@+id/locationCheck"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:textSize="18sp" />
+
+
+    <Button
+        android:id="@+id/wipeHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usageSwitchInfo"
+        android:layout_marginTop="6dp"
+        android:onClick="wipeListener"
+        android:padding="10dp"
+        android:text="@string/Erase_History" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navMenuSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/navigation_menu"
+        app:itemTextColor="@android:color/black"
+        app:itemIconTint="@android:color/black"
+        app:labelVisibilityMode="labeled"
+        android:background="@color/colorPrimary">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <TextView
+        android:id="@+id/usageSwitchInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usageCheck"
+        android:padding="10dp"
+        android:text="@string/usageInfo"
+        android:textAlignment="gravity"
+        android:textSize="12sp" />
+
+</RelativeLayout>

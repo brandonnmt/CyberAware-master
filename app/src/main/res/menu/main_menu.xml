@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/settingsItem"
+        android:title="@string/settings_name"
+        android:icon="@drawable/gearicon"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/usageButton"
+        android:title="@string/usage"
+        android:icon="@drawable/statisticsicon"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/wifiButton"
+        android:title="Wifi"
+        android:icon="@drawable/wifiicon"
+        app:showAsAction="ifRoom"/>
+
+
+</menu>

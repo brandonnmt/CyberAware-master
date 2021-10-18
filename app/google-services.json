@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "367233004748",
+    "firebase_url": "https://cyberaware2.firebaseio.com",
+    "project_id": "cyberaware2",
+    "storage_bucket": "cyberaware2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367233004748:android:18c3f9207ca3d3af",
+        "android_client_info": {
+          "package_name": "com.example.cyberaware2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367233004748-5fhl1ik9ic6jsopb5bkctcmaha8fr92n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cyberaware2",
+            "certificate_hash": "a8264e2dbac8befa794a9169edd59770f38458db"
+          }
+        },
+        {
+          "client_id": "367233004748-givo8792gmdr2sdkd4a0o63d86bm12h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7NzC84Zi-yerwY9a9xNVe0bYKGyaOAZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367233004748-givo8792gmdr2sdkd4a0o63d86bm12h7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

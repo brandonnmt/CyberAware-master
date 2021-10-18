@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1faee">
+
+    <TextView
+        android:id="@+id/locationTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/location"
+        android:textAllCaps="false"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/currentCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationTag"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/currentStateCountry"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_below="@id/currentCity"
+        android:layout_alignParentBottom="false"
+        android:layout_marginTop="0dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/malicious_app_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentStateCountry"
+        android:paddingLeft="10dp"
+        android:paddingTop="25dp"
+        android:text="@string/malicious_app_tag"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/malicious_app_instruct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/malicious_app_tag"
+        android:paddingLeft="20dp"
+        android:text="@string/malicious_app_instruct"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/malicious_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/malicious_app_instruct"
+        android:scrollbars = "vertical"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:paddingLeft="15dp" />
+
+    <TextView
+        android:id="@+id/usageTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/malicious_app"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:text="@string/usage_tag"
+        android:textColor="#000000" />
+
+    <ListView
+        android:id="@+id/usageList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usageTag"
+        android:layout_marginTop="3dp">
+
+    </ListView>
+
+</RelativeLayout>
