@@ -82,23 +82,80 @@
     </string-array>
 
     <string-array name="article_types">
-        <item>Attacks</item>
-        <item>Breaches</item>
-        <item>Cryptography</item>
-        <item>CryptoCurrency</item>
-        <item>Data Breaches</item>
-        <item>Decryption</item>
-        <item>Encryption</item>
-        <item>Internal Threats</item>
-        <item>Internet of Things</item>
+        <item>Account hijacking</item>
+        <item>Adware</item>
+        <item>Advanced Persistent Threats</item>
+        <item>Antivirus</item>
+        <item>Attack surface</item>
+        <item>Attack vector</item>
+        <item>Authenticator</item>
+        <item>Backdoor</item>
+        <item>Backup</item>
+        <item>Blacklist</item>
+        <item>Bot</item>
+        <item>Brute force attack</item>
+        <item>Catfishing</item>
+        <item>Cracker</item>
+        <item>Cryptojacking</item>
+        <item>Closed source</item>
+        <item>Cloud</item>
+        <item>Account hijacking</item>
+        <item>Adware</item>
+        <item>Advanced Persistent Threats (APT)</item>
+        <item>Antivirus</item>
+        <item>Attack surface</item>
+        <item>Attack vector</item>
+        <item>Authenticator</item>
+        <item>Backdoor</item>
+        <item>Backup</item>
+        <item>Blacklist</item>
+        <item>Bot</item>
+        <item>Brute force attack</item>
+        <item>Catfishing</item>
+        <item>Cracker</item>
+        <item>Cryptojacking</item>
+        <item>Closed source</item>
+        <item>Cloud</item>
+        <item>Credential harvesting</item>
+        <item>Critical infrastructure</item>
+        <item>Data Loss Prevention (DLP)</item>
+        <item>Data encryption</item>
+        <item>Data protection</item>
+        <item>DDoS (denial-of-service attack)</item>
+        <item>DevSecOps</item>
+        <item>Exploit</item>
+        <item>Extended enterprise</item>
+        <item>Firewall</item>
+        <item>Group authenticator</item>
+        <item>Hacker</item>
+        <item>Honeypot</item>
+        <item>IP Address</item>
+        <item>Identity check</item>
+        <item>Incident response plan</item>
+        <item>Insider threat</item>
+        <item>Keylogger</item>
         <item>Malware</item>
-        <item>Mobile Security</item>
-        <item>Online Safety</item>
+        <item>Open Source</item>
+        <item>Patch</item>
+        <item>Password sniffing</item>
         <item>Phishing</item>
-        <item>Physical Security</item>
-        <item>Privacy</item>
-        <item>Threats</item>
-        <item>Vulnerabilities</item>
+        <item>Personally identifiable information (PII)</item>
+        <item>Ransomware</item>
+        <item>Ransomcloud</item>
+        <item>ReCAPTCHA</item>
+        <item>Rootkit</item>
+        <item>Security score</item>
+        <item>Segmentation</item>
+        <item>Shadow IT</item>
+        <item>Social engineering</item>
+        <item>Spyware</item>
+        <item>Third-party</item>
+        <item>Threat</item>
+        <item>Trojan</item>
+        <item>Virtual Private Network (VPN)</item>
+        <item>Virus</item>
+        <item>Vulnerability</item>
+        <item>Worm</item>
     </string-array>
 
     <string-array name="tip_names">
@@ -119,7 +176,7 @@
 
     <string-array name="tip_content">
         <item>
-            Passwords should be more than the minimum amount allowed by any service and should
+            \nPasswords should be more than the minimum amount allowed by any service and should
             include non-alphabetic characters.\n
 
             \nLet us look at different password combinations to get a better idea of why. Say a
@@ -140,6 +197,7 @@
 
             \nNeedless to say, passwords only get stronger the longer and more complex they are.
             Therefore, it is important to make your passwords long and strong!\n
+
 
             \nThe above scenarios we used were ones where a laptop was merely guessing all the
             possible combinations that a password could be. This is called a \'brute force\' attack.
@@ -174,7 +232,7 @@
             importance of password uniqueness and the helpfulness of password managers.\n
 
             \nTo begin, for each service (e.g., social media, online store, etc.) you use, the
-            password you create for each service should be unique. Many password creations result in
+            password you create should be unique. Many password creations result in
             a user reusing a password he or she previously created. Similarly, many password changes
             oftentimes result in a password being changed to a slight variation of the original
             password. This can be predictable and make passwords easier to crack if the hacker is
@@ -184,7 +242,7 @@
             then all your other accounts are compromised! Yikes!\n
 
             \nAt this point, you may be thinking that remembering each password you create would be
-            impossible, but this is where password managers come in. Password managers are trusty,
+            impossible, but this is where password managers come in. Password managers are trustworthy,
             reliable tools that can store all your usernames and passwords and help keep them safe.
             Furthermore, for online services, password managers can help you automatically log in to
             your account. Therefore, you only need to remember one password—the password for your
