@@ -209,6 +209,11 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
 
     /**
      * listener for the search button. populates list based on user input
@@ -216,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
      * @return true
      */
     public boolean searchListener (View view){
+        hideKeyboardFrom(getApplicationContext(), view);
         EditText editText = findViewById(R.id.search_bar);
         String keyword = editText.getText().toString().trim();
         keyword = keyword.replace(" ", "+");
