@@ -65,9 +65,13 @@ public class User implements Serializable {
      * adds a single item to search history
      * @param keyword keyword that user just used
      */
-    public void addSearchHistory(String keyword){
-        Log.e(TAG, "new keyword: " + keyword);
-        searchHistory.add(keyword);
+   public void addSearchHistory(String keyword){
+        if (!searchHistory.contains(keyword)) {
+            Log.e(TAG, "new keyword: " + keyword);
+            searchHistory.add(keyword);
+        } else {
+            Log.e(TAG, "already in list");
+        }
     }
 
 
