@@ -177,7 +177,7 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
                     }
                 }
             } else {  //the main feed - (i.e., no personalized filter)
-                url = new URL("https://newsapi.org/v2/everything?q=cybersecurity" +
+                url = new URL("https://newsapi.org/v2/everything?q=" + keyword +
                             "&domains=thehackernews.com,threatpost.com" +
                             "&language=en&sortBy=relevancy,publishedAt&pageSize=20&apiKey=ef94cb8dc7df45e5ab0cd190a281e762"); // my url
             }
