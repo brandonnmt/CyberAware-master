@@ -149,8 +149,10 @@ public class BrowserActivity extends AppCompatActivity {
         int menuId = item.getItemId();
         switch (menuId) {
             case R.id.favoriteButton: // saves article to favorites
-                Toast.makeText(this, R.string.saved , Toast.LENGTH_SHORT).show();
-                currentUser.addFavorite(article);
+                if(currentUser.addFavorite(article))
+                    Toast.makeText(this, R.string.saved , Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(this, R.string.already_saved , Toast.LENGTH_SHORT).show();
                 saveUser();
                 return true;
             case R.id.exitButton:
