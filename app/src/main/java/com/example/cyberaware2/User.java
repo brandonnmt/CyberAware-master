@@ -79,7 +79,7 @@ public class User implements Serializable {
      * adds articles to favorites
      * @param article new favorite article
      */
-    public void addFavorite(Article article) {
+    public boolean addFavorite(Article article) {
         int x=0;
         for (int i = 0; i < favoriteList.size(); i++) {
             if (favoriteList.get(i).getArticleTitle().equals(article.getArticleTitle())) {
@@ -90,7 +90,9 @@ public class User implements Serializable {
             favoriteList.add(article);
         else {
             Log.e(TAG, "already in list");
+             return false;
         }
+        return true;
     }
 
     /**
