@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,6 +18,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,6 +27,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,6 +64,7 @@ public class FeedActivity extends AppCompatActivity {
     private String provider;
 
 
+    private ProgressBar spinner;
     /**
      * initializes UI with appropriate elements passed from main
      * @param savedInstanceState current state
@@ -67,12 +73,24 @@ public class FeedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
+
+        spinner=(ProgressBar)findViewById(R.id.progressBar1);
+        //  spinner.setVisibility(View.GONE);
+        spinner.setVisibility(View.VISIBLE);
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                spinner.setVisibility(View.INVISIBLE);
+            }
+        }, 4000);
+
         listView = findViewById(R.id.feedList);
         itemList = new ArrayList<>(); // initialize lists
         drawableList = new ArrayList<>();
         readUser();
         myInput = getResources().openRawResource(R.raw.newsapi_org);
-
         imageAdapter = new ImageAdapter(this, itemList, drawableList);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             /**
@@ -236,8 +254,10 @@ public class FeedActivity extends AppCompatActivity {
 
         if (currentUser.isUsage()){
             loader.execute(currentUser.getFilterQuery());
+
         } else {
-            loader.execute(currentUser.getStringFilter()); // populates listView
+            loader.execute(currentUser.getStringFilter());
+
         }
 
     }
@@ -330,6 +350,7 @@ public class FeedActivity extends AppCompatActivity {
                 ArticleLoader loader = new ArticleLoader(imageAdapter, itemList, drawableList, myInput);
                 loader.execute(currentUser.getStringFilter()); // populates listView
                 saveUser();
+
             }
         }
     }
@@ -371,7 +392,6 @@ public class FeedActivity extends AppCompatActivity {
         }
 
     }
-
 
 
 }
