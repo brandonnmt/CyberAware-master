@@ -1,10 +1,17 @@
 package com.example.cyberaware2;
 
+import android.app.ProgressDialog;
 import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +48,7 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
     private ArrayList<Drawable> drawableList; // list of drawables
     private final String TAG = "ArticleLoader";   // Log TAG
     private InputStream myInput;
+    private ProgressBar spinner;
 
     /**
      * constructor
@@ -71,7 +79,6 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
     }
 
 
-
     /**
      * this method parses json from the news api
      * @param strings keywords or keyword
@@ -81,10 +88,10 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
     protected String doInBackground(String... strings) {
         String keyword = strings[0]; // gets a keyword
         String[] keywordSplit = null;
-        String beginner = "&domains=cybersecurity-insiders.com,thehackernews.com";
-        String intermediate = "&domains=thecyberwire.com,helpnetsecurity.com";
-        String advanced = "&domains=securityweek.com,threatpost.com";
-        String expert = "&domains=csoonline.com,bankinfosecurity.com";
+        String beginner = "&domains=cybersecurity-insiders.com,thehackernews.com,welivesecurity.com,hackercombat.com,virtualattacks.com";
+        String intermediate = "&domains=thecyberwire.com,helpnetsecurity.com,darkreading.com,hackread.com,thecyberpost.com";
+        String advanced = "&domains=securityweek.com,threatpost.com,nakedsecurity.sophos.com,searchsecurity.techtarget.com,itsecurityguru.org";
+        String expert = "&domains=csoonline.com,bankinfosecurity.com,securitymagazine.com,cyberdefensemagazine.com,securityledger.com";
         int levelIndex = 0;
         int stateIndex = 0;
         ArrayList<Article> tempAList = new ArrayList<>();
@@ -114,10 +121,17 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
                     levelIndex = 2;
                     stateIndex = 1;
                 }
-                keywordSplit[0] = keywordSplit[0] + " OR +" + keywordSplit[stateIndex];
+                keywordSplit[0] = keywordSplit[0] + " AND +" + keywordSplit[stateIndex];
             }
             if (keywordSplit.length == 2) {
                 keywordSplit[0] = keywordSplit[0].substring(0, keywordSplit[0].length() - 4);
+                if (keywordSplit[1].contains("beginner") || keywordSplit[1].contains("intermediate") || keywordSplit[1].contains("advanced") || keywordSplit[1].contains("expert")) {
+                    levelIndex = 1;
+                }
+                //  keywordSplit[1] = keywordSplit[1].substring(0, keywordSplit[1].length());
+                if(levelIndex != 1)
+                    keywordSplit[0] = keywordSplit[0] + " AND +" + keywordSplit[1];
+
             }
         }
 
@@ -151,7 +165,7 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
                     }
                 }
                 //for just level
-                if (keywordSplit.length == 2) {
+                if ((keywordSplit.length == 2) || (keywordSplit.length == 4)) {
                     switch (keywordSplit[1]) {
                         case "beginner":
                         default:
@@ -178,8 +192,8 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
                 }
             } else {  //the main feed - (i.e., no personalized filter)
                 url = new URL("https://newsapi.org/v2/everything?q=" + keyword +
-                            "&domains=thehackernews.com,threatpost.com" +
-                            "&language=en&sortBy=relevancy,publishedAt&pageSize=20&apiKey=ef94cb8dc7df45e5ab0cd190a281e762"); // my url
+                        "&domains=thehackernews.com,threatpost.com" +
+                        "&language=en&sortBy=relevancy,publishedAt&pageSize=20&apiKey=ef94cb8dc7df45e5ab0cd190a281e762"); // my url
             }
 
             connection = (HttpsURLConnection) url.openConnection();
@@ -237,9 +251,26 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
                     return null;
                 }
             }
+
             Log.e(TAG, "response1 " + response.toString());
             JSONObject json = new JSONObject(response.toString()); // create json object from input
-            JSONArray data = json.getJSONArray("articles"); // gets articles from json
+            JSONArray num_articles = json.getJSONArray("articles");// gets articles from json
+            if(num_articles.length() == 0){
+                JSONObject articles = new JSONObject();
+                // json.put("articles", "No articles to diaplay");
+                JSONArray article = new JSONArray();
+                //   article.put("No articles to diaplay");
+                JSONObject title = new JSONObject();
+                title.put("title", "No articles to display");
+                title.put("url", "None");
+                title.put("urlToImage", "https://media.istockphoto.com/vectors/no-results-found-rgb-color-icon-vector-id1271310120");
+                title.put("src name", "None");
+                title.put("description", "No articles are available with the current selection. Please try different selections. ");
+                article.put(title);
+                //  articles.put("articles", article);
+                json.put("articles", article);
+            }
+            JSONArray data = json.getJSONArray("articles");
             for(int i = 0; i < data.length(); i++){
                 Log.e(TAG, "hello2");
 
@@ -273,6 +304,7 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
             Log.e(TAG, "drawable " + drawableList.size() + " article " + articleList.size());
             rd.close();
             return response.toString();
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
             Log.e(TAG, "drawable " + drawableList.size() + " article " + articleList.size());
@@ -301,6 +333,8 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
                 connection.disconnect();
             }
         }
+
+
         return null;
     }
 
@@ -314,5 +348,8 @@ public class ArticleLoader extends AsyncTask <String, String, String> {
         super.onPostExecute(s);
         Log.e(TAG, "test2");
     }
+
+
+
 
 }
