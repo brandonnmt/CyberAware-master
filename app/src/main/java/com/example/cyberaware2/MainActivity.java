@@ -1,26 +1,34 @@
-package com.example.cyberaware2;
+  package com.example.cyberaware2;
 
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -74,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
     private InputStream myInput;
 
 
+
+    private ProgressBar spinner;
     /**
      * On create method for the page
      * @param savedInstanceState current state unused
@@ -82,6 +92,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        spinner=(ProgressBar)findViewById(R.id.progressBar1);
+      //  spinner.setVisibility(View.GONE);
+        spinner.setVisibility(View.VISIBLE);
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                spinner.setVisibility(View.INVISIBLE);
+            }
+        }, 3000);
+
+
         NetworkMonitor monitor = new NetworkMonitor(this);
         monitorIntent = new Intent(this, monitor.getClass());
         if (!isMyServiceRunning(monitorIntent.getClass())) {
@@ -172,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
         Log.e(TAG, "execute");
 
         loader.execute("cybersecurity"); // loads the listView
+      //  spinner.setVisibility(View.GONE);
     }
 
     /**
@@ -209,11 +234,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-    
-    public static void hideKeyboardFrom(Context context, View view) {
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
 
     /**
      * listener for the search button. populates list based on user input
@@ -237,6 +257,21 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public void checkSearchString (){
+        EditText editText = findViewById(R.id.search_bar);
+        String keyword = editText.getText().toString().trim();
+        keyword = keyword.replace(" ", "+");
+        if (keyword.isEmpty()) {
+            keyword = "cybersecurity";
+        }
+        ArticleLoader loader = new ArticleLoader(imageAdapter, itemList, drawableList, myInput);
+        loader.execute(keyword);
+    }
+
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
 
     /**
      * creates the main_menu
@@ -379,5 +414,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
 
 }
