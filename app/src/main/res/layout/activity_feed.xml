@@ -19,6 +19,14 @@
         android:layout_above="@+id/navMenuFeed"
         />
 
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="25pt"
+        android:layout_height="25pt"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navMenuFeed"
         android:layout_width="match_parent"
