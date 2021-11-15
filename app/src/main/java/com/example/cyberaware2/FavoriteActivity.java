@@ -54,9 +54,18 @@ public class FavoriteActivity extends AppCompatActivity {
         readUser();
         drawableList = new ArrayList<>();
         favList = currentUser.getFavoriteList();
-        if (favList == null){ // get user favorites
+        if (favList.size() == 0){ // get user favorites
             favList = new ArrayList<>();
-
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("No favorites to display at this time. Please save articles to add them to favorites.")
+                    .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            //do things
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
         }
         imageAdapter = new ImageAdapter(this, favList, drawableList);
         listView.setAdapter(imageAdapter);
