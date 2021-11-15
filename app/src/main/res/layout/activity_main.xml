@@ -7,7 +7,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="0dp"
     android:background="#f1faee"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:imeOptions="actionDone">
 
     <EditText
         android:id="@+id/search_bar"
@@ -17,6 +18,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:hint="@string/search_name"
+        android:imeOptions="actionDone"
         android:textSize="24sp" />
 
     <Button
@@ -24,9 +26,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/search_bar"
-        android:text="@string/search_name"
+        android:imeOptions="actionDone"
         android:onClick="searchListener"
-        />
+        android:singleLine="true"
+        android:text="@string/search_name" />
 
     <ListView
         android:id="@+id/articleList"
@@ -36,6 +39,15 @@
         android:layout_centerHorizontal="true"
         android:layout_above="@id/navMenuMain"
         />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="25pt"
+        android:layout_height="25pt"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/search_button"
+        android:visibility="gone"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navMenuMain"
